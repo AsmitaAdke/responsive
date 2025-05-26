@@ -3,10 +3,202 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resonsive navbar</title>
+    <title>Bakery</title>
+    <style>
+
+        body{
+            background-color: #f0f0f5;
+        }
+
+       .container{
+        height: 290px;
+        width: 250px;
+        margin-top: 10px;
+        border-radius: 5px;
+        background-color: white;
+        box-shadow: 0px 0.5px 1px 1px #c2c2c9;
+       }
+
+       .main-container{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+       }
+
+       .pink-cake{
+        height: 120px;
+        margin-left: 15px;
+        margin-top: 20px;
+        border-radius: 5px;
+
+       }
+
+       .name{
+        font-size: 18px;
+        margin-left: 7px;
+       }
+
+       .price{
+        text-align: center;
+        font-size: 20px;
+        color: #e60000;
+       }
+
+       .btn{
+        padding: 8px 12px;
+        background-color: #e60000;
+        border-radius: 15px;
+        border: none;
+        color: white;
+        margin-left: 75px;
+       }
+
+       .mixed-flavoured{
+        margin-left: 20px;
+        width: 210px;
+       }
+
+       .strawbery{
+        width: 210px;
+        height: 120px;
+       }
+
+       .rose{
+        width: 210px;
+       }
+
+       h1{
+        text-align: center;
+       }
+
+       .logo{
+        height: 120px;
+       margin-left: 570px;
+       margin-top: 15px;
+       }
+
+       .navbar{
+        background-color: #e60000;
+        height: 45px;
+        width: full;
+        margin-top: 8px;
+        display: flex;
+        position: sticky;
+        top: 0px;
+       }
+
+       .menu{
+        width: 70%;
+        padding-top: 8px;
+       }
+       
+       .menus{
+        color: white;
+        text-decoration: none;
+        font-size: 20px;
+        margin: 15px;
+        
+    }
+
+    .search{
+        font-size: 16px;
+        border-radius: 20px;
+        border: none;
+        padding: 5px 10px;
+        margin-top: 3px;
+        margin-bottom: 3px;
+        margin-left: 160px;
+    }
+
+    .menus:hover{
+        text-decoration: underline;
+        transition: 0.8s;
+    }
+
+   .searchBox{
+    display: flex;
+   }
+    /mobile/
+    @media (max-width:600px) {
+
+        .navbar{
+        height: 40px;
+        display: block;
+        width: 100%;
+        display: flex;
+       }
+
+       .menu{
+        display: flex;
+       }
+
+       .search{
+        display: none;
+       }
+
+      .menu{
+        display: none;
+      }
+
+    .hamberger-menu{
+       display: flex;
+       justify-content: right;
+        
+    }
+
+    .logo{
+        display: block;
+        margin: 10px auto;
+    }
+
+    .heading{
+        font-size: 25px;
+    }
+        
+    }
+
+    /tablet/
+    @media (min-width:601px) and (max-width:900px) {
+       .search{
+           width: 140px;
+           margin-right: 10px;
+           padding: 0px 10px;
+       }
+
+       .hamberger-menu{
+        display: none;
+       }
+        
+
+    .menu{
+        width: 450px;
+    }
+
+    .menus{
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        margin: 5px;
+        
+    }
+
+    .logo{
+        margin-left: 320px;
+    }
+}
+    /desktop/
+    @media (min-width:901px) and (max-width:3000px){
+
+        .hamberger-menu{
+            display: none;
+        }
+    }
+   
+    </style>
 </head>
 <body>
-     <div class="navbar">
+
+    <div class="navbar">
 
         <div class="menu">
             <a href="h" class="menus">Home</a>
@@ -23,7 +215,10 @@
             <img src="menu.png" alt="menu" class="hamberger-menu">
         </div>
 
-         </div>
+
+
+        
+    </div>
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB7JHj4ouUmph8F-O1QU7nbouhR9n745jxfQ&s" alt="logo" class="logo">
     <div>
        
@@ -80,5 +275,3 @@
 </div>
 </body>
 </html>
-
-
