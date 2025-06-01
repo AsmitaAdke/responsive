@@ -1,277 +1,258 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bakery</title>
-    <style>
-
-        body{
-            background-color: #f0f0f5;
-        }
-
-       .container{
-        height: 290px;
-        width: 250px;
-        margin-top: 10px;
-        border-radius: 5px;
-        background-color: white;
-        box-shadow: 0px 0.5px 1px 1px #c2c2c9;
-       }
-
-       .main-container{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-       }
-
-       .pink-cake{
-        height: 120px;
-        margin-left: 15px;
-        margin-top: 20px;
-        border-radius: 5px;
-
-       }
-
-       .name{
-        font-size: 18px;
-        margin-left: 7px;
-       }
-
-       .price{
-        text-align: center;
-        font-size: 20px;
-        color: #e60000;
-       }
-
-       .btn{
-        padding: 8px 12px;
-        background-color: #e60000;
-        border-radius: 15px;
-        border: none;
-        color: white;
-        margin-left: 75px;
-       }
-
-       .mixed-flavoured{
-        margin-left: 20px;
-        width: 210px;
-       }
-
-       .strawbery{
-        width: 210px;
-        height: 120px;
-       }
-
-       .rose{
-        width: 210px;
-       }
-
-       h1{
-        text-align: center;
-       }
-
-       .logo{
-        height: 120px;
-       margin-left: 570px;
-       margin-top: 15px;
-       }
-
-       .navbar{
-        background-color: #e60000;
-        height: 45px;
-        width: full;
-        margin-top: 8px;
-        display: flex;
-        position: sticky;
-        top: 0px;
-       }
-
-       .menu{
-        width: 70%;
-        padding-top: 8px;
-       }
-       
-       .menus{
-        color: white;
-        text-decoration: none;
-        font-size: 20px;
-        margin: 15px;
-        
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bakery</title>
+  <style>
+    body {
+      background-color: #f0f0f5;
+      margin: 0;
+      font-family: sans-serif;
     }
 
-    .search{
-        font-size: 16px;
-        border-radius: 20px;
-        border: none;
-        padding: 5px 10px;
-        margin-top: 3px;
-        margin-bottom: 3px;
-        margin-left: 160px;
+    h1 {
+      text-align: center;
+      font-size: 24px;
+      margin: 20px 10px;
     }
 
-    .menus:hover{
-        text-decoration: underline;
-        transition: 0.8s;
+    .navbar {
+      background-color: #e60000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 16px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
-   .searchBox{
-    display: flex;
-   }
-    /mobile/
-    @media (max-width:600px) {
+    .menu {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
 
-        .navbar{
-        height: 40px;
-        display: block;
-        width: 100%;
-        display: flex;
-       }
+    .menus {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
 
-       .menu{
-        display: flex;
-       }
+    .menus:hover {
+      text-decoration: underline;
+      transition: 0.3s;
+    }
 
-       .search{
-        display: none;
-       }
+    .searchBox {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
 
-      .menu{
+    .search {
+      font-size: 16px;
+      border-radius: 20px;
+      border: none;
+      padding: 6px 12px;
+    }
+
+    .hamberger-menu {
+      display: none;
+      width: 28px;
+      height: 28px;
+      cursor: pointer;
+    }
+
+    .logo {
+      display: block;
+      max-width: 140px;
+      height: auto;
+      margin: 20px auto 10px;
+    }
+
+    .main-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 0 20px 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .container {
+      background-color: white;
+      border-radius: 5px;
+      box-shadow: 0px 0.5px 1px 1px #c2c2c9;
+      padding-bottom: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .pink-cake {
+      height: 120px;
+      width: auto;
+      border-radius: 5px;
+      margin-top: 20px;
+    }
+
+    .name {
+      font-size: 18px;
+      margin: 12px 8px 4px;
+      text-align: center;
+    }
+
+    .price {
+      font-size: 20px;
+      color: #e60000;
+      text-align: center;
+    }
+
+    .btn {
+      padding: 8px 16px;
+      background-color: #e60000;
+      border-radius: 15px;
+      border: none;
+      color: white;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .btn:hover {
+      background-color: #cc0000;
+    }
+
+    .mixed-flavoured,
+    .strawbery,
+    .rose {
+      width: 90%;
+      object-fit: cover;
+    }
+
+    
+    @media (max-width: 600px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+      }
+
+      .menu {
         display: none;
       }
 
-    .hamberger-menu{
-       display: flex;
-       justify-content: right;
-        
-    }
-
-    .logo{
+      .hamberger-menu {
         display: block;
-        margin: 10px auto;
-    }
+      }
 
-    .heading{
-        font-size: 25px;
-    }
-        
-    }
+      .searchBox {
+        width: 100%;
+        justify-content: space-between;
+      }
 
-    /tablet/
-    @media (min-width:601px) and (max-width:900px) {
-       .search{
-           width: 140px;
-           margin-right: 10px;
-           padding: 0px 10px;
-       }
-
-       .hamberger-menu{
+      .search {
         display: none;
-       }
-        
+      }
 
-    .menu{
-        width: 450px;
+      .logo {
+        max-width: 100px;
+        margin-top: 10px;
+      }
+
+      h1 {
+        font-size: 20px;
+        padding: 0 10px;
+      }
     }
 
-    .menus{
-        color: white;
-        text-decoration: none;
-        font-size: 18px;
-        margin: 5px;
-        
-    }
-
-    .logo{
-        margin-left: 320px;
-    }
-}
-    /desktop/
-    @media (min-width:901px) and (max-width:3000px){
-
-        .hamberger-menu{
-            display: none;
-        }
-    }
    
-    </style>
+    @media (min-width: 601px) and (max-width: 900px) {
+      .menu {
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .search {
+        width: 120px;
+        font-size: 14px;
+      }
+
+      .hamberger-menu {
+        display: none;
+      }
+
+      .logo {
+        max-width: 120px;
+      }
+
+      h1 {
+        font-size: 22px;
+      }
+    }
+
+   
+    @media (min-width: 901px) {
+      .hamberger-menu {
+        display: none;
+      }
+
+      .menu {
+        gap: 20px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <div class="navbar">
-
-        <div class="menu">
-            <a href="h" class="menus">Home</a>
-            <a href="a" class="menus">About</a>
-            <a href="c" class="menus">CupCakes</a>
-            <a href="r" class="menus">Recipe</a>
-            <a href="b" class="menus">Blog</a>
-            <a href="c" class="menus">Contact</a>
-
-        </div>
-
-        <div class="searchBox">
-            <input type="text" placeholder="Search" class="search">
-            <img src="menu.png" alt="menu" class="hamberger-menu">
-        </div>
-
-
-
-        
+  <div class="navbar">
+    <div class="menu">
+      <a href="h" class="menus">Home</a>
+      <a href="a" class="menus">About</a>
+      <a href="c" class="menus">CupCakes</a>
+      <a href="r" class="menus">Recipe</a>
+      <a href="b" class="menus">Blog</a>
+      <a href="c" class="menus">Contact</a>
     </div>
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB7JHj4ouUmph8F-O1QU7nbouhR9n745jxfQ&s" alt="logo" class="logo">
-    <div>
-       
+    <div class="searchBox">
+      <input type="text" placeholder="Search" class="search" />
+      <img src="menu.png" alt="menu" class="hamberger-menu" />
+    </div>
+  </div>
+
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB7JHj4ouUmph8F-O1QU7nbouhR9n745jxfQ&s" alt="logo" class="logo" />
+
+  <h1 class="heading">Try Our Most Popular Signature cakes and taste the Difference</h1>
+
+  <div class="main-container">
+    <div class="container">
+      <img src="https://img.lovepik.com/bg/20240502/Captivating-3D-Birthday-Cake-Design-with-Pink-Icing-and-a_8480079_wh860.jpg!/fw/860" alt="cake" class="pink-cake" />
+      <h2 class="name">Pink Creamy Cherry Milk</h2>
+      <p class="price">$9.00</p>
+      <button class="btn">Order Now</button>
     </div>
 
-    <h1 class="heading">Try Our Most Popular Signature cakes and taste the Difference</h1>
-    <div class="main-container">
-   <div class="container">
-       <img src="https://img.lovepik.com/bg/20240502/Captivating-3D-Birthday-Cake-Design-with-Pink-Icing-and-a_8480079_wh860.jpg!/fw/860" alt="cake" class="pink-cake">
+    <div class="container">
+      <img src="https://5.imimg.com/data5/SELLER/Default/2023/1/JG/WM/CB/121721023/multi-flavour-cake.jpg" alt="mixed-flavoured cake" class="pink-cake mixed-flavoured" />
+      <h2 class="name">Gummy Tosca Mixed Flavours</h2>
+      <p class="price">$9.00</p>
+      <button class="btn">Order Now</button>
+    </div>
 
-       <h2 class="name">Pink Creamy Cherry Milk</h2>
+    <div class="container">
+      <img src="https://www.foodnetwork.com/content/dam/images/food/fullset/2012/2/9/0/SH1406_Blushing-Strawberry-Cupcakes_s4x3.jpg" alt="strawbery cake" class="pink-cake strawbery" />
+      <h2 class="name">Blushing Strawbery Cream</h2>
+      <p class="price">$9.00</p>
+      <button class="btn">Order Now</button>
+    </div>
 
-       <p class="price">$9.00</p>
-
-       <button class="btn">Order Now</button>
-   </div>
-
-   <div class="container">
-
-    <img src="https://5.imimg.com/data5/SELLER/Default/2023/1/JG/WM/CB/121721023/multi-flavour-cake.jpg" alt="mixed-flavoured cake" class="pink-cake mixed-flavoured">
-
-    <h2 class="name">Gummy Tosca Mixed Flavours</h2>
-
-    <p class="price">$9.00</p>
-
-       <button class="btn">Order Now</button>
-
-   </div>
-
-   <div class="container">
-
-    <img src="https://www.foodnetwork.com/content/dam/images/food/fullset/2012/2/9/0/SH1406_Blushing-Strawberry-Cupcakes_s4x3.jpg" alt="strawbery cake" class="pink-cake strawbery">
-
-    <h2 class="name">Blushing Strawbery Cream</h2>
-
-    <p class="price">$9.00</p>
-
-    <button class="btn">Order Now</button>
-    
-   </div>
-
-   <div class="container">
-
-    <img src="https://creamys.in/wp-content/uploads/2022/02/rose_on_chocolate_cake.jpg" alt="rose-cake" class="pink-cake rose">
-
-    <h2 class="name">Mystery Rose Choco</h2>
-
-    <p class="price">$9.00</p>
-
-    <button class="btn">Order Now</button>
-
-   </div>
-
-</div>
+    <div class="container">
+      <img src="https://creamys.in/wp-content/uploads/2022/02/rose_on_chocolate_cake.jpg" alt="rose-cake" class="pink-cake rose" />
+      <h2 class="name">Mystery Rose Choco</h2>
+      <p class="price">$9.00</p>
+      <button class="btn">Order Now</button>
+    </div>
+  </div>
 </body>
 </html>
